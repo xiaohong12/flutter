@@ -7,117 +7,13 @@ class FlullterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter demo',
       home: Scaffold(
-          appBar: AppBar(
-            title: const Center(
-              child: Text("首页"),
-            ),
-            actions: const [Icon(Icons.calendar_month)],
-            leading: const Icon(Icons.arrow_back),
-          ),
-          body: const Center(
-            child: Text('Hello World'),
-          ),
-          persistentFooterButtons: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.cyan,
-            ),
-          ],
-          persistentFooterAlignment: AlignmentDirectional.bottomCenter,
-          floatingActionButton: FloatingActionButton(
-            child: const Text("按钮"),
-            onPressed: () {
-              print('我被点击了');
-            },
-          ),
-          floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          drawer: const Text("drawer"),
-          onDrawerChanged: (bool isOpened) => {print(isOpened)},
-          bottomNavigationBar: const MyFulBottomNavigationBar(),
-          bottomSheet: const MyBottomSheet()),
-    );
-  }
-}
-
-class MyFulBottomNavigationBar extends StatefulWidget {
-  const MyFulBottomNavigationBar({super.key});
-
-  @override
-  State<StatefulWidget> createState() {
-    // 将创建的State返回
-    return MyBottomNavigationBarState();
-  }
-}
-
-class MyBottomNavigationBarState extends State<MyFulBottomNavigationBar> {
-  int _currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'home',
+        body: Center(
+          child: Text("Home"),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          label: 'favorite',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.accessible),
-          label: 'accessible',
-        ),
-      ],
-      currentIndex: _currentIndex,
-      onTap: (int index) {
-        setState(() {
-          _currentIndex = index;
-        });
-      },
-    );
-  }
-}
-
-class MyBottomSheet extends StatefulWidget {
-  const MyBottomSheet({super.key});
-  @override
-  State<StatefulWidget> createState() {
-    return MyBottomSheetState();
-  }
-}
-
-class MyBottomSheetState extends State<MyBottomSheet> {
-  bool isShowDrag = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomSheet(
-      onClosing: () => {},
-      showDragHandle: isShowDrag,
-      builder: (context) {
-        return Container(
-          height: 300,
-          color: Colors.yellow,
-          alignment: Alignment.centerLeft,
-          child: const Text("BottomSheet In Scaffold"),
-        );
-      },
+      ),
     );
   }
 }
