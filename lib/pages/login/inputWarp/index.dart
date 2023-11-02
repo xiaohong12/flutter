@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_1/pages/home/index.dart';
 
 class LoginWarp extends StatefulWidget {
   const LoginWarp({super.key});
@@ -20,6 +21,21 @@ class LoginWarpState extends State<LoginWarp> {
     nameController.text = "新密码";
     psdController.text = '新用户';
     return nameController.text;
+  }
+
+  final List<String> nameList = ["1", "5"];
+
+  Future<void> _goHomePage(BuildContext context) async {
+    final result = await Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const HomePage(),
+            settings: RouteSettings(arguments: nameList)));
+
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text('$result')));
   }
 
   @override
@@ -64,7 +80,8 @@ class LoginWarpState extends State<LoginWarp> {
                   height: 45,
                   child: OutlinedButton(
                       onPressed: () {
-                        print(getValue());
+                        // print(getValue());
+                        _goHomePage(context);
                       },
                       style: ButtonStyle(
                           backgroundColor:
