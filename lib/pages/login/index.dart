@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_1/pages/login/inputWarp/index.dart';
 
-class LoginScaffold extends StatelessWidget {
-  const LoginScaffold({super.key});
+class LoginCompont extends StatelessWidget {
+  const LoginCompont({super.key});
 
   @override
   Widget build(BuildContext context) {

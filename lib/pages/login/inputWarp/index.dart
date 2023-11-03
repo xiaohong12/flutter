@@ -29,7 +29,7 @@ class LoginWarpState extends State<LoginWarp> {
     final result = await Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => const HomePage(),
+            builder: (context) => const HomeComponent(),
             settings: RouteSettings(arguments: nameList)));
 
     if (!mounted) return;
