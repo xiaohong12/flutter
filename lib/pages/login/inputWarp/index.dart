@@ -1,5 +1,7 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_1/pages/home/index.dart';
+import "../../../router/application.dart";
 
 class LoginWarp extends StatefulWidget {
   const LoginWarp({super.key});
@@ -26,16 +28,8 @@ class LoginWarpState extends State<LoginWarp> {
   final List<String> nameList = ["1", "5"];
 
   Future<void> _goHomePage(BuildContext context) async {
-    final result = await Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const HomeComponent(),
-            settings: RouteSettings(arguments: nameList)));
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(context)
-      ..removeCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text('$result')));
+    Application.router
+        .navigateTo(context, '/home', transition: TransitionType.material);
   }
 
   @override
