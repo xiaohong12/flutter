@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluro/fluro.dart';
-
-import "../../router/application.dart";
+import "../../router/fluro_navigator.dart";
 
 class HomeComponent extends StatelessWidget {
   const HomeComponent({super.key});
@@ -19,9 +17,7 @@ class HomeComponent extends StatelessWidget {
             color: Colors.white,
             child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.pop(context, '蒋小洪');
-                  Application.router.navigateTo(context, '/login',
-                      transition: TransitionType.material);
+                  NavigatorUtils.push((context), '/login', arguments: "5555");
                 },
                 child: const Center(child: Text("Back")))));
   }

@@ -19,7 +19,8 @@ var hometHandler = Handler(
 //登录页面
 var loginHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return const LoginCompont();
+  final args = context?.settings?.arguments;
+  return LoginCompont(args);
 });
 
 //空页面 404页面
