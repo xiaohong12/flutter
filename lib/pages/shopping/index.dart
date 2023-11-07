@@ -9,11 +9,16 @@ class ShoppingComponent extends StatefulWidget {
   }
 }
 
-class ShoppingComponentState extends State<ShoppingComponent> {
+class ShoppingComponentState extends State<ShoppingComponent>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(child: Text("Shopping")),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

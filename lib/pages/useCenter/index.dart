@@ -9,11 +9,16 @@ class UserCenterComponent extends StatefulWidget {
   }
 }
 
-class UserCenterComponentState extends State<UserCenterComponent> {
+class UserCenterComponentState extends State<UserCenterComponent>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(child: Text("UserCenter")),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
