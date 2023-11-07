@@ -51,10 +51,6 @@ class HomeInitComponentState extends State<HomeInitComponent> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: const Text("HomePage"),
-          centerTitle: true,
-        ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
             onTap: (activeKey) {
