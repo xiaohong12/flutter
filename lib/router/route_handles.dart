@@ -7,13 +7,13 @@ import "package:flutter_demo_1/pages/empty/index.dart";
 // root页面
 var rootHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return const HomeComponent();
+  return const HomeInitComponent();
 });
 
 //首页
 var hometHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return const HomeComponent();
+  return const HomeInitComponent();
 });
 
 //登录页面

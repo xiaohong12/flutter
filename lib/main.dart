@@ -18,6 +18,7 @@ class FlullterApp extends StatelessWidget {
     return MaterialApp(
         title: 'Loan App',
         debugShowCheckedModeBanner: false, //隐藏头部的环境表示
-        onGenerateRoute: Application.router.generator);
+        onGenerateRoute: Application.router.generator,
+        theme: ThemeData());
   }
 }
